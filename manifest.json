@@ -1,0 +1,41 @@
+{
+   "author": "Shivanand Sharma",
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "options_ui": {
+       "page": "options.html",
+       "chrome_style": true
+    },
+   "content_scripts": [
+		{
+			"matches" : [
+                "<all_urls>",
+                "*://*/*"
+			],
+            "js" : ["content.js"],
+            
+			"run_at" : "document_start",
+            "all_frames" : false
+            
+		}
+	],
+   "browser_action": {
+      "default_icon": "icon-48.png",
+      "default_popup": "popup.html"
+   },
+   "chrome_url_overrides" : {
+    "newtab": "newtab.html"
+  },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "description": "Let's color the tabs. Shall we!",
+   "homepage_url": "https://www.addongenie.com/",
+   "icons": {"128": "icon-128.png","16": "icon-16.png","48": "icon-48.png"},
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAndyt0KB7ayO1TxRXy5F2KP7vvswn6aJdKDCLyAO4WiOXKQId1l8cBqahyjx46bZYFt6twWyyPnYk6pN/So+KNfen2D8DNO/4Qw5Zc96i+JsowzkfXDBpv/K7uGpBZZZtp9q2IgPEr202zmmqlVHGcf/8TPiGKqgyq8Xw3HKLP3FVmbdSULuz1i/rn2XLYZux528IUFa8BweYDluYm7iLtqOh+MgULZ7ADVEkQ6kO3IzcFjMaA2Wne/poon/SfhY0eAbFTuNHrWhqcbSKMhx9uoBTbvH+AD2z62z1jKkF6VY0kdKbZ/7Cj+P50j0oOAw3i112bHym7LyYB+D65hvnaQIDAQAB",
+   "manifest_version": 2,
+   "name": "ColorfulTabs for Chrome",
+   "permissions": [ "webNavigation", "tabs","storage", "<all_urls>" ],
+   "short_name": "ColorfulTabs",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}

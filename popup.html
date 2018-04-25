@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+         ::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            width: 800px;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        #ct-tabs-container {
+
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+        }
+
+        #ct-tabs {
+            margin: 0 10px 0 0;
+            padding: 0 10px 0 10px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            list-style: none;
+            width: 90%;
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+            height: 39px;
+        }
+
+        .ct-tab {
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+
+
+            list-style: none;
+            white-space: pre;
+            width: auto;
+            max-width: 100px;
+            padding: 10px 21px 5px 8px;
+
+            transition: all .2s;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #ddd;
+            display: block;
+            overflow: hidden;
+            height: 21px;
+            cursor: default;
+            margin: 0px;
+
+            position: relative;
+            bottom: 0px;
+        }
+
+        .ct-tab[data-ct-selected="true"] {
+            bottom: -3px;
+        }
+
+        .ct-tab[data-ct-selected="true"]:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 90%;
+            top: 0px;
+            height: 0px;
+            border-top: 2px solid red;
+            font-weight: bold;
+        }
+
+        .ct-tab-label {
+            display: block;
+            overflow: hidden;
+            margin-right: 4px;
+            padding-top: 2px;
+        }
+
+        .ct-tab[data-ct-selected="true"] .ct-tab-label {
+            padding-top: 2px;
+        }
+
+        .ct-tab:hover {
+            width: auto;
+        }
+
+
+        .ct-tab-close {
+            position: absolute;
+            top: 12px;
+            right: 6px;
+
+            display: block;
+            height: 16px;
+            width: 16px;
+            margin-left: 10px;
+            background-image: url(close-normal.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .ct-tab-close:hover {
+            background-image: url(close-hover.svg) !important;
+        }
+
+        .ct-tab-close:active {
+            background-image: url(close-active.svg) !important;
+        }
+
+        #contribute, #feedback, #options, #tips {
+            color: #000;
+            text-decoration: none;
+            padding: 5px 10px;
+            outline: none;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            border: 0;
+            border-radius: 2px;
+            background: #ffbf00;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, .25);
+            transition: all .2s;
+            font-weight: bold;
+        }
+        #feedback, #options, #tips {
+            background-color: #ccc;
+        }
+        #contribute:hover, #feedback:hover, #options:hover, #tips:hover {
+            box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+        }
+    </style>
+    <script type="text/javascript" src="popup.js"></script>
+    <title>ColorfulTabs</title>
+</head>
+
+<body>
+    <div id="ct-tabs-container"></div>
+    <a data-href="https://www.addongenie.com/fr/colorfultabs-updated-a.php" id="contribute">Contribute</a>
+    <a data-href="https://www.addongenie.com/forums/forum/colorfultabs" id="feedback" title="Report bugs or feature requests">Report Bugs</a>
+    <a data-href="chrome.runtime.openOptionsPage()" id="options" title="Options">Options</a>
+    <a data-href="https://www.addongenie.com/general/tips-for-using-colorfultabs-with-chrome" id="tips" title="Options">Cool Tricks</a>
+    <span style="font-size: smaller">*Browser restart required.</span>
+</body>
+
+</html>
