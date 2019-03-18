@@ -21,7 +21,7 @@ function save_options() {
     // Use default value color = 'red' and likesColor = true.
     chrome.storage.sync.get({
       
-        browserstrip: true
+        browserstrip: false
     }, function(items) {
       
       document.getElementById('browser-strip').checked = items.browserstrip;
